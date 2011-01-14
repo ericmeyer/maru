@@ -5,7 +5,8 @@
 ; Given current board and color of player, return a list of all legal moves on the board, excluding "Ko".
 ; Definition of Ko: http://senseis.xmp.net/?Ko
 (defn find-all-legal [board color]
-	(remove #(not (= gray %)) board))
+	(def all-moves (range (count board)))
+	(remove #(not (= gray (board %))) all-moves))
 
 ; Given current board, color and position of a stone, return a list of stones to be captured/removed from board.
 ; Definition of capture: http://senseis.xmp.net/?Capture

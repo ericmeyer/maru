@@ -11,6 +11,7 @@
 	(it "filters a white move for white"
 		(reset 9)
 		(def new-board (play 1 white))
+		(prn (find-all-legal new-board white))
 		(should= 80 (count (find-all-legal new-board white))))
 	(it "filters a black move for white"
 		(reset 9)
