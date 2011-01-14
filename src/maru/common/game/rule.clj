@@ -1,8 +1,11 @@
-(ns maru.common.game.rule)
+(ns maru.common.game.rule
+	(:use [maru.common.board.core])
+	(:require [maru.common.board.core]))
 
 ; Given current board and color of player, return a list of all legal moves on the board, excluding "Ko".
 ; Definition of Ko: http://senseis.xmp.net/?Ko
-; (defn find-all-legal [board color] '())
+(defn find-all-legal [board color]
+	(remove #(not (= gray %)) board))
 
 ; Given current board, color and position of a stone, return a list of stones to be captured/removed from board.
 ; Definition of capture: http://senseis.xmp.net/?Capture
